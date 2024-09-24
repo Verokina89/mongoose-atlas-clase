@@ -4,6 +4,11 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user"); 
 
+//// users.js
+router.get("/", (req, res) => {
+    res.send("¡Bienvenido a la API de Usuarios!");
+});
+
 //// Ruta para obtener todos los usuarios
 router.get('/users', (req, res) => {
     res.json({ message: 'Lista de usuarios' });
