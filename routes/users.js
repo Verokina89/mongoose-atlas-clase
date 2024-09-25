@@ -6,12 +6,12 @@ const User = require("../models/user");
 
 //// users.js
 router.get("/", (req, res) => {
-    res.send("¡Bienvenido a la API de Usuarios!");
+    res.send("¡Bienvenidos! Estás en la API de Usuarios Registrados");
 });
 
 //// Ruta para obtener todos los usuarios
 router.get('/users', (req, res) => {
-    res.json({ message: 'Lista de usuarios' });
+    res.json({ message: 'Lista de usuarios registrados' });
 });
 
 // Ruta para crear un nuevo usuario
@@ -21,9 +21,7 @@ router.post("/create", async(req, res) => {
         res.status(201).send(user);
     } catch (error) {
         console.error(error);
-        res
-            .status(500)
-            .send({ message: "There was a problem trying to create a user" });
+        res.status(500).send({ message: "There was a problem trying to create a user" });
     }
 });
 
